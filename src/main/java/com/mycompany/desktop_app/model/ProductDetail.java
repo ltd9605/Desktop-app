@@ -6,6 +6,7 @@ package com.mycompany.desktop_app.model;
 /**
  *
  * @author ltd96
+ * ProductDetail entity class
  */
 public class ProductDetail {
     private int productDetailId;
