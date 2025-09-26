@@ -7,12 +7,12 @@ package com.mycompany.desktop_app.model;
 /**
  *
  * @author ltd9605
- * Product entity class
+ *         Product entity class
  */
 public class Product {
     private int productId;
     private String productName;
-    private int categoryId;  // foreign key to category
+    private int categoryId; // foreign key to category
     private int supplierId; // foreign key to supplier
     private int quantity;
     private String imgUrl;
@@ -20,12 +20,12 @@ public class Product {
     private String description;
     private String status;
 
-    //   Constructor
+    // Constructor
     public Product() {
     }
-    
+
     public Product(int productId, String productName, int categoryId, int supplierId,
-                   int quantity, String imgUrl, float price, String description, String status) {
+            int quantity, String imgUrl, float price, String description, String status) {
         this.productId = productId;
         this.productName = productName;
         this.categoryId = categoryId;
@@ -36,6 +36,7 @@ public class Product {
         this.description = description;
         this.status = status;
     }
+
     public Product(int id, String name, int quan, String url, float price, String status) {
         this.productId = id;
         this.productName = name;
@@ -45,7 +46,7 @@ public class Product {
         this.status = status;
     }
 
-    // GETTER 
+    // GETTER
     public int getProductId() {
         return productId;
     }
@@ -117,5 +118,24 @@ public class Product {
 
     public void setStatus(String newStatus) {
         this.status = newStatus;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" + "productId=" + productId + ", productName=" + productName +
+                ", categoryId=" + categoryId + ", supplierId=" + supplierId +
+                ", quantity=" + quantity + ", imgUrl=" + imgUrl +
+                ", price=" + price + ", description=" + description +
+                ", status=" + status + '}';
+    }
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Product other = (Product) obj;
+        return productId == other.productId;
     }
 }

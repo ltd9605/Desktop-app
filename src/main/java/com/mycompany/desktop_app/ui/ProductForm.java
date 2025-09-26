@@ -4,10 +4,13 @@
  */
 package com.mycompany.desktop_app.ui;
 
+import javax.swing.*;
+import java.awt.*;
+
 /**
  *
  * @author ltd96
  */
-public class UIForm {
-    // keepfile
+public class ProductForm {
+
 }

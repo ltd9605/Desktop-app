@@ -3,10 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.desktop_app.model;
+
 /**
  *
  * @author ltd96
- * ProductDetail entity class
+ *         ProductDetail entity class
  */
 public class ProductDetail {
     private int productDetailId;
@@ -18,15 +19,15 @@ public class ProductDetail {
     private String battery;
     private String os;
     private int warranty; // month
-    private int status;   // 0 = unavailable, 1 = available ...
+    private int status; // 0 = unavailable, 1 = available ...
 
     // Constructor
     public ProductDetail() {
     }
-    
+
     public ProductDetail(int productDetailId, int productId, String imei, String color,
-                         String storage, String ram, String battery, String os,
-                         int warranty, int status) {
+            String storage, String ram, String battery, String os,
+            int warranty, int status) {
         this.productDetailId = productDetailId;
         this.productId = productId;
         this.imei = imei;
@@ -38,6 +39,7 @@ public class ProductDetail {
         this.warranty = warranty;
         this.status = status;
     }
+
     // GETTER
     public int getProductDetailId() {
         return productDetailId;
@@ -119,5 +121,12 @@ public class ProductDetail {
     public void setStatus(int status) {
         this.status = status;
     }
-}
 
+    @Override
+    public String toString() {
+        return "ProductDetail{" + "productDetailId=" + productDetailId + ", productId=" + productId +
+                ", imei=" + imei + ", color=" + color + ", storage=" + storage +
+                ", ram=" + ram + ", battery=" + battery + ", os=" + os +
+                ", warranty=" + warranty + ", status=" + status + '}';
+    }
+}

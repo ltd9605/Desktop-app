@@ -14,10 +14,10 @@ public class Category {
     private int categoryId;
     private String categoryName;
 
-    //  Constructor
+    // Constructor
     public Category() {
     }
-    
+
     public Category(int id, String name) {
         this.categoryId = id;
         this.categoryName = name;
@@ -40,5 +40,21 @@ public class Category {
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
     }
-}
 
+    @Override
+    public String toString() {
+        return "Category{" + "categoryId=" + categoryId + ", categoryName=" + categoryName + '}';
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Category other = (Category) obj;
+        return categoryId == other.categoryId &&
+                (categoryName != null ? categoryName.equals(other.categoryName) : other.categoryName == null);
+    }
+}
