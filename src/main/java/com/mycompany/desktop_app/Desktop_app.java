@@ -3,7 +3,7 @@
  */
 
 package com.mycompany.desktop_app;
-
+import com.mycompany.desktop_app.ui.ProductForm;
 /**
  *
  * @author ltd96
@@ -11,6 +11,6 @@ package com.mycompany.desktop_app;
 public class Desktop_app {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        new ProductForm();
     }
 }

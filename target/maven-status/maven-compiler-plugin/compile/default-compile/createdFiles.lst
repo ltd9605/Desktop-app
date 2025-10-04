@@ -1,0 +1,8 @@
+com\mycompany\desktop_app\util\UtilFeature.class
+com\mycompany\desktop_app\Desktop_app.class
+com\mycompany\desktop_app\ui\ProductForm.class
+com\mycompany\desktop_app\model\Product.class
+com\mycompany\desktop_app\model\ProductDetail.class
+com\mycompany\desktop_app\dao\DataAccessObject.class
+com\mycompany\desktop_app\model\Category.class
+com\mycompany\desktop_app\service\Service.class
