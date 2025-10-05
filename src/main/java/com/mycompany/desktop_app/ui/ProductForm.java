@@ -8,7 +8,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import com.mycompany.desktop_app.model.Product;
-import static java.awt.Color.GRAY;
+import com.mycompany.desktop_app.model.ProductDetail;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -57,7 +59,33 @@ public class ProductForm {
 
     return productList;
 }
+    public ArrayList<ProductDetail> InitProductDetailListExample() {
+    ArrayList<ProductDetail> detailList = new ArrayList<>();
 
+    // Iphone 15 Pro
+    detailList.add(new ProductDetail(101, 1, "865123045678912", "Titan Xám", "256GB", "8GB", "4500mAh", "iOS 17", 12, 1));
+    detailList.add(new ProductDetail(102, 2, "865123045678913", "Bạc", "128GB", "6GB", "4200mAh", "iOS 16", 12, 1));
+    detailList.add(new ProductDetail(103, 3, "865123045678914", "Đỏ", "128GB", "4GB", "4000mAh", "iOS 15", 6, 1));
+
+    // Samsung
+    detailList.add(new ProductDetail(104, 4, "865123045678915", "Đen", "256GB", "8GB", "4800mAh", "Android 14", 12, 1));
+    detailList.add(new ProductDetail(105, 5, "865123045678916", "Tím", "512GB", "12GB", "3700mAh", "Android 13", 12, 1));
+    detailList.add(new ProductDetail(106, 6, "865123045678917", "Xanh lam", "128GB", "8GB", "5000mAh", "Android 13", 12, 1));
+
+    // Oppo
+    detailList.add(new ProductDetail(107, 7, "865123045678918", "Xanh ngọc", "256GB", "8GB", "4600mAh", "Android 14", 12, 1));
+    detailList.add(new ProductDetail(108, 8, "865123045678919", "Trắng", "512GB", "12GB", "4800mAh", "Android 13", 12, 1));
+
+    // Xiaomi
+    detailList.add(new ProductDetail(109, 9, "865123045678920", "Đen", "256GB", "12GB", "4820mAh", "Android 14 (MIUI 15)", 12, 1));
+    detailList.add(new ProductDetail(110, 10, "865123045678921", "Xanh", "128GB", "8GB", "5000mAh", "Android 13 (MIUI 14)", 12, 1));
+
+    // iPad
+    detailList.add(new ProductDetail(111, 11, "865123045678922", "Bạc", "512GB", "8GB", "10758mAh", "iPadOS 17", 12, 1));
+    detailList.add(new ProductDetail(112, 12, "865123045678923", "Xám không gian", "256GB", "8GB", "7600mAh", "iPadOS 16", 12, 1));
+
+    return detailList;
+}
     public ProductForm(){
         frame = new JFrame("Product");
         frame.setLayout(null);
@@ -70,7 +98,6 @@ public class ProductForm {
         JPanel containerPn = new JPanel();
         containerPn.setBounds(20,60,540,240);
         containerPn.setLayout(null);
-        containerPn.setBackground(GRAY);
         JTextField searchTxt = new JTextField("Nhập tên sản phẩm");
         searchTxt.setBounds(10,10,150,20);
         JButton searchBtn = new JButton("Tìm kiếm");
@@ -82,6 +109,7 @@ public class ProductForm {
         categoryCbx.setBounds(400,10,100,20);
         containerPn.add(categoryCbx);
         ArrayList<Product> pList = InitArrayListExample();
+        ArrayList<ProductDetail> detailList = InitProductDetailListExample();
         String[] columnNames = {"ID", "Tên sản phẩm", "CategoryId", "SupplierId","Số lượng", "Ảnh", "Giá", "Mô tả", "Trạng thái"};
         DefaultTableModel model = new DefaultTableModel(columnNames,0);
         for(Product p : pList){
@@ -103,10 +131,24 @@ public class ProductForm {
         sc.setBounds(0,40,540, 200);
         containerPn.add(sc);
         frame.add(containerPn);
-        JButton editBtn = new JButton("Sửa");
-        editBtn.setBounds(480,320,100,20);
-        frame.add(editBtn);
+        JButton viewDetailBtn = new JButton("Xem chi tiết");
+        viewDetailBtn.setBounds(480,320,100,20);
+        JButton deleProductBtn = new JButton("Xoá sản phẩm");
+        deleProductBtn.setBounds(200,320,100,20);
+        frame.add(viewDetailBtn);
+        frame.add(deleProductBtn);
         frame.add(addProductBtn);
         frame.setVisible(true);
+        // action methods
+        viewDetailBtn.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                int selectedRow =  table.getSelectedRow();
+                if ( selectedRow == -1 ) return;
+                Product selectedProduct = pList.get(selectedRow);
+                ProductDetail selectedProductDetail = detailList.get(selectedRow);
+                 new ProductDetailForm(selectedProduct,selectedProductDetail);
+            }
+        });
     }
 }

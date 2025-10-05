@@ -6,3 +6,5 @@ com\mycompany\desktop_app\model\ProductDetail.class
 com\mycompany\desktop_app\dao\DataAccessObject.class
 com\mycompany\desktop_app\model\Category.class
 com\mycompany\desktop_app\service\Service.class
+com\mycompany\desktop_app\ui\ProductDetailForm.class
+com\mycompany\desktop_app\ui\ProductForm$1.class
