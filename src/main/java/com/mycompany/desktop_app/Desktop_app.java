@@ -9,7 +9,7 @@ import com.mycompany.desktop_app.model.Product;
 import com.mycompany.desktop_app.model.ProductDetail;
 import com.mycompany.desktop_app.ui.CustomerForm;
 import com.mycompany.desktop_app.ui.EmployeeForm;
-import com.mycompany.desktop_app.ui.StatisticsForm;
+import com.mycompany.desktop_app.ui.ThongKeForm;
 /**
  *
  * @author ltd96
@@ -20,6 +20,6 @@ public class Desktop_app {
         new ProductForm();
         new CustomerForm();
         new EmployeeForm();
-        new StatisticsForm();
+        new ThongKeForm();
     }
 }
